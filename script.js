@@ -13,7 +13,7 @@ const numsElm = document.getElementById("nums");
 const timerElm = document.getElementById("timer");
 const answersElm = document.getElementById("answers");
 const instructionsElm = document.getElementById("instructions");
-const answerGuessesElm = document.getElementById ("answer-guesses");
+const answerInputs = document.querySelectorAll("#answer-guesses input");
 
 
 // DOM EVENTS
@@ -59,8 +59,8 @@ const intervalID = setInterval(function(){
 // 4. dopo l'utente clicca "conferma", il software dice quanti e quali dei numeri da indovinare sono stati individuati 
 answersElm.addEventListener("submit", function(event) {
     event.preventDefault();
-    for(let i = 0; i < answerGuessesElm.length; i++) {
-        const guess = answerGuessesElm[i].value
+    for(let i = 0; i < answerInputs.length; i++) {
+        const guess = Number(answerInputs[i].value);
         console.log(guess);
     }
 })
