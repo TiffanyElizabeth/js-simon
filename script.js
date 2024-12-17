@@ -8,8 +8,34 @@ Pensate prima in italiano.
 Dividete in piccoli problemi la consegna.
 Individuate gli elementi di cui avete bisogno per realizzare il programma.
 Immaginate la logica come fosse uno snack: "Dati 2 array di numeri, indica quali e quanti numeri ci sono in comune tra i due array */
+// DOM ELEMENTS 
+const numsElm = document.getElementById("nums");
 
-// 1. stampa 5 numeri casuali (max 2 digits each)
+
+// DOM EVENTS
+// 1. stampa 5 numeri casuali (max 2 digits each) - array
+    // function - get random numbers (10-99)
+    function getRndInteger(min,max) {
+        return Math.floor(Math.random() * (max - min + 1) ) + min;
+    }
+
+    // array 5 random numbers
+    const fiveRandomNums = [];
+
+    for(let i = 1; i <=5; i++) {
+        const randomNum = getRndInteger(10,99);
+        fiveRandomNums.push(randomNum);
+    }
+
+    console.log(fiveRandomNums);
+
+    // make array appear in page
+    let nums = '';
+    for(let i = 0; i < fiveRandomNums.length; i++) {
+        nums += `<li>${fiveRandomNums[i]}<li>`;
+    }
+    numsElm.innerHTML = nums;
+
 
 // 2. parte un timer di 30 secondi
 

@@ -9,7 +9,22 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <h1>Simon Says</h1>
+    <div class="d-flex justify-content-center align-items-center">
+        <div id="timer" class="fs-1 fw-bolder"></div>
+        <ul id="nums" class="d-flex list-unstyled gap-4"></ul>
+        <form id="answers" class="d-none">
+            <div id="answer-guesses" class="d-flex gap-4">
+                <input type="number" class="form-control" min="10" max="99" required>
+                <input type="number" class="form-control" min="10" max="99" required>
+                <input type="number" class="form-control" min="10" max="99" required>
+                <input type="number" class="form-control" min="10" max="99" required>
+                <input type="number" class="form-control" min="10" max="99" required>
+            </div>
+            <button class="btn btn-primary d-block">Conferma</button>
+            <h1 id="result" class="text-center"></h1>
+        </form>
+    </div>
+
 
     <script src="script.js"></script>
 </body>
