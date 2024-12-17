@@ -10,6 +10,10 @@ Individuate gli elementi di cui avete bisogno per realizzare il programma.
 Immaginate la logica come fosse uno snack: "Dati 2 array di numeri, indica quali e quanti numeri ci sono in comune tra i due array */
 // DOM ELEMENTS 
 const numsElm = document.getElementById("nums");
+const timerElm = document.getElementById("timer");
+const answersElm = document.getElementById("answers");
+const instructionsElm = document.getElementById("instructions");
+const answerGuessesElm = document.getElementById ("answer-guesses");
 
 
 // DOM EVENTS
@@ -37,8 +41,26 @@ const numsElm = document.getElementById("nums");
     numsElm.innerHTML = nums;
 
 
-// 2. parte un timer di 30 secondi
+// 2. parte un timer di 30 secondi && // 3. quando finisce il timer, i numeri scompaiono e appaiono invece 5 input in cui l'utente deve inserire i numeri che ha visto precedentemente 
+let timer = 5;
+timerElm.innerHTML = timer;
+const intervalID = setInterval(function(){
+    timer--;
+    if(timer === 0) {
+        clearInterval(intervalID);
+        numsElm.classList.add("d-none");
+        answersElm.classList.remove("d-none");
+        instructionsElm.classList.remove("d-none");
+    }
+    timerElm.innerHTML = timer;
+}, 1000)
 
-// 3. quando finisce il timer, i numeri scompaiono e appaiono invece 5 input in cui l'utente deve inserire i numeri che ha visto precedentemente 
 
 // 4. dopo l'utente clicca "conferma", il software dice quanti e quali dei numeri da indovinare sono stati individuati 
+answersElm.addEventListener("submit", function(event) {
+    event.preventDefault();
+    for(let i = 0; i < answerGuessesElm.length; i++) {
+        const guess = answerGuessesElm[i].value
+        console.log(guess);
+    }
+})

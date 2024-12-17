@@ -9,10 +9,11 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <div class="d-flex justify-content-center align-items-center">
-        <div id="timer" class="fs-1 fw-bolder"></div>
-        <ul id="nums" class="d-flex list-unstyled gap-4"></ul>
-        <form id="answers" class="d-none">
+    <div>
+        <div id="timer" class="text-center fs-1 fw-bolder"></div>
+        <div id="instructions" class="d-none text-center">Inserisci tutti i numeri che ricordi (l'ordine non è importante)</div>
+        <ul id="nums" class="d-flex list-unstyled gap-4 d-flex justify-content-center align-items-center"></ul>
+        <form id="answers" class="d-none align-items-center">
             <div id="answer-guesses" class="d-flex gap-4">
                 <input type="number" class="form-control" min="10" max="99" required>
                 <input type="number" class="form-control" min="10" max="99" required>
@@ -20,7 +21,9 @@
                 <input type="number" class="form-control" min="10" max="99" required>
                 <input type="number" class="form-control" min="10" max="99" required>
             </div>
-            <button class="btn btn-primary d-block">Conferma</button>
+            <div class="d-flex justify-content-center mt-3">
+                <button class="btn btn-primary d-block">Conferma</button>
+            </div>
             <h1 id="result" class="text-center"></h1>
         </form>
     </div>
